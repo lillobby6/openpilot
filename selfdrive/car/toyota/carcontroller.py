@@ -68,7 +68,7 @@ class CarController:
       self.frames_above_rate_threshold = 0
 
     # Cut steering if we're about to fault the EPS
-    if not CC.latActive or self.frames_above_rate_threshold > STEER_FAULT_MAX_FRAMES:
+    if not CC.latActive:  #  or self.frames_above_rate_threshold > STEER_FAULT_MAX_FRAMES:
       apply_steer = 0
       apply_steer_req = 0
     else:
